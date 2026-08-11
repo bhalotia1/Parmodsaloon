@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Parmod Saloon</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #120807;
+      color: #fff;
+      font-family: Georgia, serif;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 25px 18px 50px;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 18px;
+      letter-spacing: 4px;
+      color: #d9a441;
+      margin-bottom: 35px;
+    }
+
+    .hero {
+      padding: 20px 0 35px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #c8b5a5;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .salon-card {
+      background: #241311;
+      border: 1px solid #5b3429;
+      border-radius: 22px;
+      padding: 30px 20px;
+      margin: 20px 0;
+      box-shadow: 0 15px 40px rgba(0,0,0,.4);
+    }
+
+    .scissors {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .salon-card h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .salon-card p {
+      color: #bfaea3;
+      line-height: 1.6;
+    }
+
+    .section-title {
+      margin: 35px 0 18px;
+      font-size: 25px;
+    }
+
+    .services {
+      display: grid;
+      gap: 12px;
+    }
+
+    .service {
+      background: #21110f;
+      border: 1px solid #4a2922;
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .service span:last-child {
+      color: #d9a441;
+      font-weight: bold;
+    }
+
+    .music-box {
+      background: linear-gradient(145deg, #2b1713, #170b09);
+      border: 1px solid #70412e;
+      border-radius: 20px;
+      padding: 25px 18px;
+      margin-top: 15px;
+    }
+
+    .music-icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .music-box h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .music-box p {
+      color: #bdaaa0;
+      margin-bottom: 18px;
+    }
+
+    .play-btn {
+      display: inline-block;
+      background: #d9a441;
+      color: #160b08;
+      padding: 13px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact {
+      margin-top: 35px;
+    }
+
+    .button {
+      display: block;
+      padding: 15px;
+      margin: 12px 0;
+      border-radius: 13px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .instagram {
+      background: #8b3d65;
+      color: white;
+    }
+
+    footer {
+      margin-top: 45px;
+      color: #75645d;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="logo">
+      PARMOD SALOON
+    </div>
+
+    <section class="hero">
+      <h1>Parmod<br>Saloon</h1>
+      <p>
+        Classic grooming. Timeless style.<br>
+        Your neighbourhood salon.
+      </p>
+    </section>
+
+    <div class="salon-card">
+      <div class="scissors">✂️</div>
+
+      <h2>Welcome</h2>
+
+      <p>
+        Step into Parmod Saloon — where
+        traditional barbering meets modern style.
+      </p>
+    </div>
+
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services">
+
+      <div class="service">
+        <span>Hair Cut</span>
+        <span>₹100</span>
+      </div>
+
+      <div class="service">
+        <span>Hair Cut + Beard</span>
+        <span>₹150</span>
+      </div>
+
+      <div class="service">
+        <span>Beard Styling</span>
+        <span>₹70</span>
+      </div>
+
+      <div class="service">
+        <span>Hair Wash</span>
+        <span>₹50</span>
+      </div>
+
+      <div class="service">
+        <span>Face Massage</span>
+        <span>₹100</span>
+      </div>
+
+    </div>
+
+    <h2 class="section-title">90s Music Radio</h2>
+
+    <div class="music-box">
+
+      <div class="music-icon">🎵</div>
+
+      <h3>Saloon Classics</h3>
+
+      <p>
+        Relax, get your haircut and enjoy
+        timeless Hindi classics.
+      </p>
+
+      <a class="play-btn"
+         href="https://www.youtube.com/"
+         target="_blank">
+        ▶ PLAY MUSIC
+      </a>
+
+    </div>
+
+    <div class="contact">
+
+      <h2 class="section-title">Visit Us</h2>
+
+      <a class="button whatsapp"
+         href="https://wa.me/91XXXXXXXXXX"
+         target="_blank">
+        💬 WhatsApp Us
+      </a>
+
+      <a class="button instagram"
+         href="https://instagram.com/"
+         target="_blank">
+        📸 Instagram
+      </a>
+
+    </div>
+
+    <footer>
+      © 2026 Parmod Saloon<br>
+      Classic grooming since day one.
+    </footer>
+
+  </div>
+
+</body>
+</html>
