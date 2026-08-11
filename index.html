@@ -21,27 +21,28 @@ html,body{
 body{
   min-height:100vh;
   color:#f5eadf;
-  font-family:Georgia, "Times New Roman", serif;
+  font-family:Georgia,"Times New Roman",serif;
+
   background:
-    radial-gradient(circle at 50% 15%, rgba(157,91,42,.45), transparent 30%),
-    radial-gradient(circle at 15% 80%, rgba(105,43,25,.35), transparent 30%),
+    radial-gradient(circle at 50% 15%,rgba(157,91,42,.45),transparent 30%),
+    radial-gradient(circle at 15% 80%,rgba(105,43,25,.35),transparent 30%),
     linear-gradient(135deg,#100807,#2b120c 48%,#080505);
+
   overflow-x:hidden;
 }
 
-/* Vintage light */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
+
   background:
     radial-gradient(circle at 50% 25%,
     rgba(255,196,100,.12),
     transparent 35%);
 }
 
-/* Barber pole style glow */
 body::after{
   content:"";
   position:fixed;
@@ -98,7 +99,8 @@ h1{
   letter-spacing:1px;
 }
 
-/* Main player */
+/* PLAYER */
+
 .player{
   margin-top:20px;
   padding:25px 18px 22px;
@@ -131,7 +133,8 @@ h1{
   text-transform:uppercase;
 }
 
-/* Record */
+/* RECORD */
+
 .record{
   width:155px;
   height:155px;
@@ -161,8 +164,15 @@ h1{
   width:55px;
   height:55px;
   border-radius:50%;
+
   background:
-    radial-gradient(circle,#d8a34a 0 12%,#6b3822 13% 55%,#1b0d09 56%);
+    radial-gradient(
+      circle,
+      #d8a34a 0 12%,
+      #6b3822 13% 55%,
+      #1b0d09 56%
+    );
+
   border:3px solid #b67938;
 }
 
@@ -194,27 +204,31 @@ h1{
   margin-top:6px;
 }
 
-/* Progress */
-.progress-area{
-  margin-top:22px;
-}
+/* YOUTUBE PLAYER */
 
-.progress{
+.video-container{
+  display:none;
   width:100%;
-  height:4px;
-  background:#493027;
-  border-radius:10px;
+  margin-top:20px;
   overflow:hidden;
+  border-radius:16px;
+  border:1px solid #60402e;
+  background:#000;
 }
 
-.progress-fill{
-  width:18%;
-  height:100%;
-  background:#d8a34a;
-  border-radius:10px;
+.video-container.show{
+  display:block;
 }
 
-/* Controls */
+.video-container iframe{
+  width:100%;
+  aspect-ratio:16/9;
+  display:block;
+  border:0;
+}
+
+/* CONTROLS */
+
 .controls{
   display:flex;
   justify-content:center;
@@ -247,7 +261,8 @@ h1{
   transform:scale(.94);
 }
 
-/* Playlist */
+/* PLAYLIST */
+
 .section-title{
   margin:32px 0 14px;
   color:#d8a34a;
@@ -283,18 +298,7 @@ h1{
   color:#80695c;
 }
 
-/* YouTube */
-.youtube{
-  display:block;
-  margin-top:20px;
-  padding:14px;
-  border-radius:14px;
-  background:#21100c;
-  border:1px solid #493026;
-  color:#d8a34a;
-  text-decoration:none;
-  font-size:13px;
-}
+/* FOOTER */
 
 .footer{
   margin-top:30px;
@@ -303,8 +307,8 @@ h1{
   letter-spacing:2px;
 }
 
-/* Mobile */
 @media(max-width:380px){
+
   h1{
     font-size:36px;
   }
@@ -321,6 +325,7 @@ h1{
 </style>
 </head>
 
+
 <body>
 
 <div class="page">
@@ -328,6 +333,7 @@ h1{
   <div class="brand">
     PARMOD SALOON
   </div>
+
 
   <section class="hero">
 
@@ -345,33 +351,53 @@ h1{
   </section>
 
 
+  <!-- MUSIC PLAYER -->
+
   <div class="player">
 
     <div class="badge">
       ● Radio Online
     </div>
 
+
     <div class="record" id="record">
+
       <div class="record-center"></div>
+
     </div>
+
 
     <div class="now">
       Now Playing
     </div>
 
+
     <div class="song">
       90s Hindi Romantic Collection
     </div>
+
 
     <div class="artist">
       Kumar Sanu Special
     </div>
 
-    <div class="progress-area">
-      <div class="progress">
-        <div class="progress-fill"></div>
-      </div>
+
+    <!-- YOUTUBE EMBED -->
+
+    <div
+      class="video-container"
+      id="videoContainer">
+
+      <iframe
+        id="youtubePlayer"
+        src=""
+        title="Parmod Saloon Music"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+
     </div>
+
 
     <div class="controls">
 
@@ -379,12 +405,16 @@ h1{
         ↶
       </button>
 
+
       <button
         class="play-button"
         id="playButton"
         onclick="playMusic()">
+
         ▶
+
       </button>
+
 
       <button class="control">
         ↷
@@ -395,43 +425,39 @@ h1{
   </div>
 
 
+  <!-- PLAYLIST -->
+
   <div class="section-title">
     Select Your Vibe
   </div>
 
+
   <div class="playlist">
 
-    <button>
+    <button onclick="changeSong('xp5j2IHyTgs')">
       🎵 Highway Raat
       <span>90s</span>
     </button>
 
-    <button>
+
+    <button onclick="changeSong('xp5j2IHyTgs')">
       🎶 Saloon Classics
       <span>Hits</span>
     </button>
 
-    <button>
+
+    <button onclick="changeSong('xp5j2IHyTgs')">
       💔 90s Dard
       <span>Love</span>
     </button>
 
-    <button>
+
+    <button onclick="changeSong('xp5j2IHyTgs')">
       💃 Shaadi & Sunday
       <span>Fun</span>
     </button>
 
   </div>
-
-
-  <a
-    class="youtube"
-    href="https://youtu.be/xp5j2IHyTgs"
-    target="_blank">
-
-    ▶ Open 90s Hindi Music on YouTube
-
-  </a>
 
 
   <div class="footer">
@@ -443,27 +469,49 @@ h1{
 
 <script>
 
+const videoContainer =
+  document.getElementById("videoContainer");
+
+const youtubePlayer =
+  document.getElementById("youtubePlayer");
+
+const record =
+  document.getElementById("record");
+
+const playButton =
+  document.getElementById("playButton");
+
+
 function playMusic(){
 
-  const record = document.getElementById("record");
-  const button = document.getElementById("playButton");
+  const videoID = "xp5j2IHyTgs";
 
-  record.classList.toggle("playing");
+  videoContainer.classList.add("show");
 
-  if(record.classList.contains("playing")){
+  youtubePlayer.src =
+    "https://www.youtube.com/embed/" +
+    videoID +
+    "?autoplay=1&rel=0";
 
-    button.innerHTML = "Ⅱ";
+  record.classList.add("playing");
 
-    window.open(
-      "https://youtu.be/xp5j2IHyTgs",
-      "_blank"
-    );
+  playButton.innerHTML = "Ⅱ";
 
-  }else{
+}
 
-    button.innerHTML = "▶";
 
-  }
+function changeSong(videoID){
+
+  videoContainer.classList.add("show");
+
+  youtubePlayer.src =
+    "https://www.youtube.com/embed/" +
+    videoID +
+    "?autoplay=1&rel=0";
+
+  record.classList.add("playing");
+
+  playButton.innerHTML = "Ⅱ";
 
 }
 
